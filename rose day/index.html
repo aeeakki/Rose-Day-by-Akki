@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Komu 🌹</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Floating Hearts Background -->
+    <div id="floatingHearts"></div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- LOCK SCREEN -->
+    <section id="lockScreen" class="scene active">
+        <div class="container">
+            <div class="love-emoji">💖</div>
+            <h1 class="glow-text">🔒 Private Page</h1>
+            <p class="subtitle">This page is only for <b>Komal ❤️</b></p>
+            <div class="stickers-row">
+                <span class="sticker">💕</span>
+                <span class="sticker">🌹</span>
+                <span class="sticker">💝</span>
+            </div>
+            <button class="btn big-heart" onclick="unlockSite()">💖 Tap to Enter 💖</button>
+            <p class="hint">🎧 Turn on sound for best experience</p>
+        </div>
+    </section>
+
+    <!-- Scene 1: Universe Intro -->
+    <section id="scene1" class="scene">
+        <div class="container">
+            <div class="love-particles"></div>
+            <h1 class="typing-text glow-text">8 billion logon ki duniya mein…</h1>
+            <h1 class="typing-text glow-text delay-1">pata nahi kaise…</h1>
+            <h1 class="typing-text glow-text delay-2">universe ne mujhe tum tak pahucha diya, Komal ❤️</h1>
+
+            <p class="typing-text delay-3">Aur us din se meri duniya thodi si pagal…</p>
+            <p class="typing-text delay-4">aur bahut zyada beautiful ho gayi.</p>
+
+            <p class="typing-text small-cute delay-5">Yes Komu, tumhari hi baat kar raha hu 😌</p>
+
+            <div class="romantic-emojis delay-6">
+                <span class="emoji-float">💕</span>
+                <span class="emoji-float">💖</span>
+                <span class="emoji-float">🌹</span>
+                <span class="emoji-float">💝</span>
+                <span class="emoji-float">✨</span>
+            </div>
+
+            <button class="btn delay-7" onclick="nextScene(2)">👉 Start the Journey Komu ❤️</button>
+        </div>
+    </section>
+
+    <!-- Scene 2: Rose Scene -->
+    <section id="scene2" class="scene">
+        <div class="container">
+            <h2 class="glow-text">Aaj Rose Day hai 🌹</h2>
+            <p class="romantic-text">Aur kaash main tumhe real roses de pata, Komal…</p>
+
+            <p class="delay-1">Par jab meri chimani-tingu-butki mujhse door ho na…</p>
+            <p class="delay-2">toh banda thoda creative ho jata hai 😌</p>
+
+            <p class="delay-3">Isliye maine tumhare liye ek rose banaya hai…</p>
+            <p class="delay-4">jo kabhi murjhaye ga nahi ❤️</p>
+
+            <!-- CSS Rose -->
+            <div class="rose-container delay-5" id="roseContainer">
+                <div class="rose" id="rose">
+                    <div class="stem"></div>
+                    <div class="leaf leaf-left"></div>
+                    <div class="leaf leaf-right"></div>
+                    <div class="flower">
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="petal"></div>
+                        <div class="center"></div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn delay-6" id="waterBtn" onclick="waterRose()">� Water the Rose Komu 🌹</button>
+            <p class="bloom-text" id="bloomText">Dekha Komu… tumhari care se sab kuch bloom karta hai ❤️</p>
+            <button class="btn continue-btn" id="continueBtn" onclick="nextScene(3)">Continue ❤️</button>
+        </div>
+    </section>
+
+    <!-- Scene 3: 5 Love Letters -->
+    <section id="scene3" class="scene">
+        <div class="container">
+            <h2 class="glow-text">Open My Heart Komu 💌</h2>
+
+            <div class="letters-grid">
+                <!-- Letter 1 -->
+                <div class="letter-card" onclick="openLetter(1)">
+                    <div class="letter-front">
+                        <span class="letter-emoji">💌</span>
+                        <p>Letter 1</p>
+                    </div>
+                    <div class="letter-back" id="letter1">
+                        <h3>The Day You Came</h3>
+                        <p>Sach bolu Komal…<br>
+                            mujhe yaad bhi nahi kab tum meri aadat ban gayi.<br>
+                            Bas itna pata hai…<br>
+                            ab har din tumhare bina incomplete lagta hai.</p>
+                    </div>
+                </div>
+
+                <!-- Letter 2 -->
+                <div class="letter-card" onclick="openLetter(2)">
+                    <div class="letter-front">
+                        <span class="letter-emoji">💌</span>
+                        <p>Letter 2</p>
+                    </div>
+                    <div class="letter-back" id="letter2">
+                        <h3>Things I Love About You</h3>
+                        <p>Tumhari smile 😭<br>
+                            Tumhara care 😭<br>
+                            Tumhara attitude 😏<br>
+                            Tumhara 'khana khaya?' 😭<br>
+                            Aur sabse zyada…<br>
+                            tumhara mera hona ❤️</p>
+                    </div>
+                </div>
+
+                <!-- Letter 3 -->
+                <div class="letter-card" onclick="openLetter(3)">
+                    <div class="letter-front">
+                        <span class="letter-emoji">💌</span>
+                        <p>Letter 3</p>
+                    </div>
+                    <div class="letter-back" id="letter3">
+                        <h3>What You Changed</h3>
+                        <p>Tumse milne ke baad life serious kam aur beautiful zyada lagne lagi.<br>
+                            Komu, tum ho toh sab hai.</p>
+                        <p class="marathi">Tu aahes mhanun sagla aahe ❤️</p>
+                    </div>
+                </div>
+
+                <!-- Letter 4 -->
+                <div class="letter-card" onclick="openLetter(4)">
+                    <div class="letter-front">
+                        <span class="letter-emoji">💌</span>
+                        <p>Letter 4</p>
+                    </div>
+                    <div class="letter-back" id="letter4">
+                        <h3>Distance</h3>
+                        <p>Distance ne ek cheez sikhayi Komal…<br>
+                            ki love sirf paas rehne se nahi hota.<br>
+                            Love hota hai kisi ko har din feel karne se.</p>
+                    </div>
+                </div>
+
+                <!-- Letter 5 -->
+                <div class="letter-card" onclick="openLetter(5)">
+                    <div class="letter-front">
+                        <span class="letter-emoji">💌</span>
+                        <p>Letter 5</p>
+                    </div>
+                    <div class="letter-back" id="letter5">
+                        <h3>My Promise</h3>
+                        <p>Main perfect nahi hu Komu…<br>
+                            par tumhe kabhi akela feel nahi hone dunga.<br>
+                            Pinky promise 🤞❤️</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn delay-2" onclick="nextScene(4)">Continue to Memories ❤️</button>
+        </div>
+    </section>
+
+    <!-- Scene 4: Memory Section -->
+    <section id="scene4" class="scene">
+        <div class="container">
+            <h2 class="glow-text">My Favourite Person ❤️</h2>
+
+            <div class="memory-frame">
+                <div class="photo-frame">
+                    <div class="heart-icon beating">❤️</div>
+                    <p class="name-text">Komal</p>
+                </div>
+            </div>
+
+            <div class="romantic-emojis delay-05">
+                <span class="emoji-bounce">💕</span>
+                <span class="emoji-bounce">💖</span>
+                <span class="emoji-bounce">💗</span>
+            </div>
+
+            <p class="caption delay-1">Meri gallery mein hazaar photos hongi…<br>
+                par meri favourite memory sirf tum ho, chimani ❤️</p>
+
+            <button class="btn delay-2" onclick="nextScene(5)">Continue ❤️</button>
+        </div>
+    </section>
+
+    <!-- Scene 5: Distance & Countdown -->
+    <section id="scene5" class="scene dark-scene">
+        <div class="container">
+            <p class="emotional-text">Kabhi kabhi lagta hai kaash teleport ho pata…</p>
+            <p class="emotional-text delay-1">Bas ek hug ke liye… Komu.</p>
+            <p class="marathi delay-2">Ek mithhi sathi mi kahi pan karel ❤️</p>
+
+            <div class="romantic-emojis delay-3">
+                <span class="emoji-pulse">🤗</span>
+                <span class="emoji-pulse">💑</span>
+                <span class="emoji-pulse">💏</span>
+                <span class="emoji-pulse">❤️</span>
+            </div>
+
+            <div class="countdown-section delay-4">
+                <p class="countdown-title">Until I see my butki again…</p>
+                <div class="countdown">
+                    <div class="time-box">
+                        <span class="time-value" id="days">30</span>
+                        <span class="time-label">Days</span>
+                    </div>
+                    <div class="time-box">
+                        <span class="time-value" id="hours">00</span>
+                        <span class="time-label">Hours</span>
+                    </div>
+                    <div class="time-box">
+                        <span class="time-value" id="minutes">00</span>
+                        <span class="time-label">Minutes</span>
+                    </div>
+                    <div class="time-box">
+                        <span class="time-value" id="seconds">00</span>
+                        <span class="time-label">Seconds</span>
+                    </div>
+                </div>
+                <p class="countdown-note">*(counting every moment)</p>
+            </div>
+
+            <button class="btn delay-5" onclick="nextScene(6)">Continue ❤️</button>
+        </div>
+    </section>
+
+    <!-- Scene 6: Gift Box -->
+    <section id="scene6" class="scene">
+        <div class="container">
+            <p class="romantic-text">Main tumhe real roses dena chahta hu Komal…</p>
+            <p class="romantic-text delay-1">Aur next time milunga na…</p>
+            <p class="romantic-text delay-2">Toh sach mein launga 🌹</p>
+
+            <div class="gift-box-container delay-3" id="giftBoxContainer">
+                <div class="gift-box" id="giftBox" onclick="openGift()">
+                    <div class="gift-lid">
+                        <div class="gift-bow"></div>
+                    </div>
+                    <div class="gift-body"></div>
+                </div>
+                <p class="gift-label">👉 Click to Open 🎁</p>
+            </div>
+
+            <div class="gift-reveal" id="giftReveal">
+                <div class="rose-burst">
+                    🌹 🌹 🌹<br>
+                    🌹 ❤️ 🌹<br>
+                    🌹 🌹 🌹
+                </div>
+                <p class="gift-message">A bouquet of infinite roses for you Komal! 🌹❤️</p>
+                <button class="btn" onclick="nextScene(7)">Continue ❤️</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scene 7: Final Rose Message -->
+    <section id="scene7" class="scene">
+        <div class="container">
+            <h1 class="final-title glow-text">Happy Rose Day Komal 🌹❤️</h1>
+            <p class="final-subtitle">Distance sirf map pe hota hai… dil mein nahi.</p>
+
+            <div class="final-message">
+                <p>Until I can place real roses in your hands…<br>
+                    Please accept this digital garden from my (thoda pagal) heart ❤️</p>
+            </div>
+
+            <div class="romantic-emojis-large">
+                <span class="emoji-spin">🌹</span>
+                <span class="emoji-spin">💖</span>
+                <span class="emoji-spin">🌹</span>
+            </div>
+
+            <div class="floating-stickers">
+                <span class="float-emoji">🌹</span>
+                <span class="float-emoji">💕</span>
+                <span class="float-emoji">💖</span>
+                <span class="float-emoji">🌹</span>
+                <span class="float-emoji">💝</span>
+            </div>
+
+            <button class="btn delay-2" onclick="nextScene(8)">There's more... ❤️</button>
+        </div>
+    </section>
+
+    <!-- Scene 8: Secret Proposal -->
+    <section id="scene8" class="scene secret-scene">
+        <div class="container">
+            <p class="secret-text">One last thing Komu…</p>
+
+            <h1 class="proposal-text delay-1">Will you be my forever Valentine? ❤️</h1>
+
+            <div class="heart-animation delay-2">
+                <div class="beating-heart">💖</div>
+            </div>
+
+            <div class="final-message-box delay-3">
+                <p class="romantic-text">Tu meri zindagi ka sabse beautiful chapter hai Komal...</p>
+                <p class="romantic-text">Aur main chahta hu ye story kabhi khatam na ho ❤️</p>
+                <p class="marathi">Tuzi saath sathi mi tayar aahe... Forever! 💍</p>
+            </div>
+
+            <div class="stickers-row delay-4">
+                <span class="sticker pulse">💕</span>
+                <span class="sticker pulse">💝</span>
+                <span class="sticker pulse">💖</span>
+                <span class="sticker pulse">💗</span>
+                <span class="sticker pulse">💘</span>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
